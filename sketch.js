@@ -16,7 +16,7 @@ let velocidadeYBolinha = 6;
 let xRaquete = 5;
 let yRaquete = 150;
 let raqueteComprimento = 10;
-let raqueteAltura = 90;
+let raqueteHenrique = 90;
 
 //placar do jogo
 let meusPontos = 0;
@@ -31,7 +31,7 @@ function setup() {
 
 function draw() {
     background(0);
-    mostraBolinha();
+    mostrahenrique();
     movimentaBolinha();
     verificaColisaoBorda();
     mostraRaquete(xRaquete, yRaquete);
@@ -43,7 +43,7 @@ function draw() {
     incluiPlacar() 
     marcaPonto();
 }
-function mostraBolinha() {
+function mostrahenrique() {
   circle(xBolinha, yBolinha, diametro);
 }
 
@@ -62,7 +62,7 @@ function verificaColisaoBorda() {
 }
 
 function mostraRaquete(x,y) {
-    rect(x, y, raqueteComprimento, raqueteAltura);
+    rect(x, y, raqueteComprimento, raqueteHenrique);
 }
 
 function movimentaMinhaRaquete() {
@@ -75,13 +75,13 @@ function movimentaMinhaRaquete() {
 }
 
 function verificaColisaoRaquete() {
-  if (xBolinha - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
+  if (xBolinha - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteHenrique && yBolinha + raio > yRaquete) {
     velocidadeXBolinha *= -1;
   }
 }
 
 function verificaColisaoRaquete(x, y) {
-    colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteAltura, xBolinha, yBolinha, raio);
+    colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteHenrique, xBolinha, yBolinha, raio);
     if (colidiu){
         velocidadeXBolinha *= -1;
   }
